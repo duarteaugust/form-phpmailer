@@ -13,6 +13,10 @@ require 'PHPMailer.php';
 require 'SMTP.php';
 require 'Exception.php';
 
+//verificando campos no servidor
+if ( ($_POST["nome"]=='') || ($_POST["email"]=='') || $_POST["mensagem"]==''  ) {
+    die ("Preencha o formulário");
+}
 
 //recebendo os dados do formulário via $_POST
 $nome       = $_POST["nome"];
